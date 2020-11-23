@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
     <title>Working with Vue</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -13,9 +14,14 @@
 
         <ul>
             <li v-for="item in collection">
-                <p v-on:click="logClicked">Prof Name: {{ item.name }}, Role: {{ item.role }} </p>
+                <p>Prof Name: {{ item.name }}, Role: {{ item.role }} </p>
+                <a href="" class="remove_prof" @click.prevent="removeProf(item)" :class="{'prof_button_mod' : removeAformat}">Remove {{item.name}}</a>
             </li>
         </ul>
+
+        <section class="bio-data" :class="{'show-bio': showBioData}">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nemo. Delectus, distinctio, architecto quia recusandae harum repudiandae nesciunt accusamus ipsum reprehenderit a perferendis veniam neque doloremque, nihil necessitatibus nulla aliquam?</p>
+        </section>
 
     </main>
 
